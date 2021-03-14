@@ -6,12 +6,18 @@ export default class ApiService {
     this.orientation = 'horizontal';
     this.query = query;
     this.page = 1;
-    this.resultsPerPage = 12;
+    this.resultsPerPage = 3;
   }
-  fetchReguest() {
-    return fetch(this.createRequest(this.query)).then(response =>
-      response.json(),
-    );
+  // fetchReguest() {
+  //   return fetch(this.createRequest(this.query)).then(response => {
+  //     if (!response.ok) throw response;
+  //     return response.json();
+  //   });
+  // }
+  async fetchReguest() {
+    const response = await fetch(this.createRequest(this.query));
+    if (!response.ok) throw response;
+    return await response.json();
   }
   createRequest() {
     return `${BASE_URL}?image_type=${this.imageType}&orientation=${this.orientation}&q=${this.query}&page=${this.page}&per_page=${this.resultsPerPage}&key=${API_KEY}`;

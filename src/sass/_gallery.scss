@@ -1,0 +1,9 @@
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -30px;
+}
+.gallery-item{
+    margin: 30px;
+    max-width: 20%;
+}
