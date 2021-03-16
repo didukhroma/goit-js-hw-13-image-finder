@@ -6,14 +6,9 @@ export default class ApiService {
     this.orientation = 'horizontal';
     this.query = query;
     this.page = 1;
-    this.resultsPerPage = 3;
+    this.resultsPerPage = 6;
   }
-  // fetchReguest() {
-  //   return fetch(this.createRequest(this.query)).then(response => {
-  //     if (!response.ok) throw response;
-  //     return response.json();
-  //   });
-  // }
+
   async fetchReguest() {
     const response = await fetch(this.createRequest(this.query));
     if (!response.ok) throw response;
