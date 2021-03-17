@@ -1,12 +1,13 @@
 .gallery {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: -5px;
 }
-.gallery-item{
-    max-width: 150px;
-    margin-bottom: 20px;
+.gallery-item {
+  max-width: 300px;
+  margin: 5px 5px 20px 5px;
 }
 .stats {
-    padding-left: 20px;
+  padding-left: 20px;
 }
