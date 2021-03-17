@@ -1,15 +1,17 @@
 import settings from '../settings/settings';
 const { API_KEY, BASE_URL } = settings;
 export default class ApiService {
-  constructor(query) {
+  constructor() {
+    //query
     this.imageType = 'photo';
     this.orientation = 'horizontal';
-    this.query = query;
+    this.query = null;
     this.page = 1;
-    this.resultsPerPage = 6;
+    this.resultsPerPage = 12;
   }
 
   async fetchReguest() {
+    if (this.query === null) return;
     const response = await fetch(this.createRequest(this.query));
     if (!response.ok) throw response;
     return await response.json();
